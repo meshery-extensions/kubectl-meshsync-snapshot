@@ -1,0 +1,20 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: meshsync-snapshot
+spec:
+  version: v0.0.1
+  homepage: https://github.com/meshery-extensions/kubectl-meshsync-snapshot
+  shortDescription: Creates a k8s cluster snapshot
+  description: |
+    This plugin: generate  a snapshot of a cluster resources as a yaml file;
+  caveats:
+  platforms:
+  # TODO other platforms
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: TODO
+    sha256: <put a hash from make build step here>
+    bin: bin/meshsync-snapshot

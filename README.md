@@ -57,6 +57,21 @@ A self-service engineering platform, <a href="https://meshery.io">Meshery</a>, i
 
 A `kubectl` plugin for performing an ad hoc collection of resource information from a Kubernetes cluster and sending the cluster resources details to a Meshery Server. `kubectl meshsync snapshot` is a native kubectl plugin for conveniently synchronizing the state of your cluster with Meshery Server.
 
+# Instruction
+1) Build 
+```sh
+make build
+```
+
+2) Update sha256 
+Hash is produced by step 1)
+manually update in meshsync-snapshot.yaml
+
+3) Install 
+```sh
+make install
+```
+
 ## About Meshery Extensions
 
 [Meshery Extensions](https://meshery.io/extension) are plugins or add-ons that enhance the functionality of the Meshery platform beyond its core capabilities. Meshery supports different types of extensions ([docs](https://docs.meshery.io/extensions/)):
