@@ -89,7 +89,7 @@ wrk2-setup:
 
 ## Setup nighthawk for local development.
 nighthawk-setup: dep-check
-	cd server; cd cmd; git clone https://github.com/meshery/nighthawk-go.git; cd nighthawk-go; make setup; cd ..
+	cd server; cd cmd; git clone https://github.com/layer5io/nighthawk-go.git; cd nighthawk-go; make setup; cd ..
 
 run-local: server-local error
 
