@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/layer5io/meshkit/logger"
-	libmeshsync "github.com/n2h9/fork-meshery-meshsync/pkg/lib/meshsync"
+	libmeshsync "github.com/meshery/meshsync/pkg/lib/meshsync"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
