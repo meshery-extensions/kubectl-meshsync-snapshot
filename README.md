@@ -42,8 +42,14 @@ MESHERY IS A CLOUD NATIVE COMPUTING FOUNDATION PROJECT
 <img src=".github/assets/images/readme/cncf-black.svg#gh-light-mode-only" width="30%" align="center" />
 </div>
 <br />
-<p align="center">
-A self-service engineering platform, <a href="https://meshery.io">Meshery</a>, is the open source, cloud native manager that enables the design and management of all Kubernetes-based infrastructure and applications (multi-cloud). Among other features,  As an extensible platform, Meshery offers visual and collaborative GitOps, freeing you from the chains of YAML while managing Kubernetes multi-cluster deployments.
+<p style="clear:both;">
+
+<h2><a href="https://meshery.io">Meshery</a></h2>
+<a href="https://meshery.io"><img src=".github/assets/images/meshery/full logo/meshery-logo-light-text.svg "
+style="margin:10px;" width="125px" 
+alt="Meshery - the Cloud Native Manager" align="left" /></a>
+A self-service engineering platform, <a href="https://meshery.io">Meshery</a>, is the open source, cloud native manager that enables the design and management of all Kubernetes-based infrastructure and applications (multi-cloud). Among other features, As an extensible platform, Meshery offers visual and collaborative GitOps, freeing you from the chains of YAML while managing Kubernetes multi-cluster deployments.
+<br /><p align="center"><i>If you’re using Meshery or if you like the project, please <a href="https://github.com/meshery/meshery/stargazers">★</a> star this repository to show your support! 🤩</i></p>
 </p>
 <br />
 
