@@ -6,8 +6,8 @@
 alt="Meshery Logo" width="70%" /></picture></a><br /><br /></p>
 <p align="center">
 <a href="https://hub.docker.com/r/meshery/meshery" alt="Docker pulls">
-  <img src="https://img.shields.io/docker/pulls/meshery/meshery.svg" /></a>
-<a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Ameshery+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+org%3A+label%3A%22help+wanted%22+" alt="GitHub issues by-label">
+  <img src="https://img.shields.io/docker/pulls/layer5/meshery.svg" /></a>
+<a href="https://github.com/issues?q=is%3Aopen%20is%3Aissue%20archived%3Afalse%20(org%3Ameshery%20OR%20org%3Aservice-mesh-performance%20OR%20org%3Aservice-mesh-patterns%20OR%20org%3Ameshery-extensions)%20label%3A%22help%20wanted%22" alt="GitHub issues by-label">
   <img src="https://img.shields.io/github/issues/meshery/meshery/help%20wanted.svg?color=informational" /></a>
 <a href="https://github.com/meshery/meshery/blob/master/LICENSE" alt="LICENSE">
   <img src="https://img.shields.io/github/license/meshery/meshery?color=brightgreen" /></a>
@@ -42,11 +42,16 @@ MESHERY IS A CLOUD NATIVE COMPUTING FOUNDATION PROJECT
 <img src=".github/assets/images/readme/cncf-black.svg#gh-light-mode-only" width="30%" align="center" />
 </div>
 <br />
-<p align="center">
-A self-service engineering platform, <a href="https://meshery.io">Meshery</a>, is the open source, cloud native manager that enables the design and management of all Kubernetes-based infrastructure and applications (multi-cloud). Among other features,  As an extensible platform, Meshery offers visual and collaborative GitOps, freeing you from the chains of YAML while managing Kubernetes multi-cluster deployments.
-</p>
+<p style="clear:both;">
+<h2><a href="https://meshery.io">Meshery</a></h2>
+<a href="https://meshery.io"><picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/meshery/meshery/master/.github/assets/images/meshery/full%20logo/meshery-logo-light-text.svg">
+ <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/meshery/meshery/master/.github/assets/images/meshery/full%20logo/meshery-logo-dark-text.svg">
+<img src="https://raw.githubusercontent.com/meshery/meshery/master/.github/assets/images/meshery/full%20logo/meshery-logo-dark-text.svg"
+style="margin:10px;" width="125px" 
+alt="Meshery - the Cloud Native Manager" align="left" /></picture></a>
+A self-service engineering platform, <a href="https://meshery.io">Meshery</a>, is the open source, cloud native manager that enables the design and management of all Kubernetes-based infrastructure and applications (multi-cloud). Among other features, As an extensible platform, Meshery offers visual and collaborative GitOps, freeing you from the chains of YAML while managing Kubernetes multi-cluster deployments.
 <br />
-
 <!-- [Meshery](https://meshery.io) is the cloud native management plane offering lifecycle, configuration, and performance management of Kubernetes, service meshes, and your workloads. -->
 <div align="center" width="100%">
 <!-- <a href="https://youtu.be/Do7htKrRzDA"><img src="https://play.meshery.io/static/media/meshery-playground-meshmap.5242722a8cd9c3855f42.png" width="800px" /></a> -->
@@ -56,6 +61,21 @@ A self-service engineering platform, <a href="https://meshery.io">Meshery</a>, i
 # kubectl meshsync snapshot
 
 A `kubectl` plugin for performing an ad hoc collection of resource information from a Kubernetes cluster and sending the cluster resources details to a Meshery Server. `kubectl meshsync snapshot` is a native kubectl plugin for conveniently synchronizing the state of your cluster with Meshery Server.
+
+# Instruction
+1) Build 
+```sh
+make build
+```
+
+2) Update sha256 
+Hash is produced by step 1)
+manually update in meshsync-snapshot.yaml
+
+3) Install 
+```sh
+make install
+```
 
 ## About Meshery Extensions
 
@@ -128,7 +148,7 @@ Find out more on the <a href="https://meshery.io/community">community</a>. <br /
 </div>
 <br /><br />
 <p align="left">
-&nbsp;&nbsp;&nbsp;&nbsp; <i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Ameshery+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted label</a>.
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen%20is%3Aissue%20archived%3Afalse%20(org%3Ameshery%20OR%20org%3Aservice-mesh-performance%20OR%20org%3Aservice-mesh-patterns%20OR%20org%3Ameshery-extensions)%20label%3A%22help%20wanted%22">help-wanted label</a>.
 </p>
 <br /><br />
 
