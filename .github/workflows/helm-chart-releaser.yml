@@ -53,12 +53,12 @@ jobs:
       #  with:
       #    token: ${{ secrets.GH_ACCESS_TOKEN }}
       #    charts_dir: install/kubernetes/helm
-      #    owner: layer5io
+      #    owner: meshery
       #    repository: meshery.io
       #    branch: master
       #    target_dir: charts
       #    commit_username: l5io
-      #    commit_email: l5io@layer5.io
+      #    commit_email: l5io@meshery.io
       #    chart_version: edge-latest
       #- name: Publish Helm chart for stable latest
       #  if: github.event_name != 'pull_request' && startsWith(github.ref, 'refs/tags/') && success()
@@ -66,12 +66,12 @@ jobs:
       #  with:
       #    token: ${{ secrets.GH_ACCESS_TOKEN }}
       #    charts_dir: install/kubernetes/helm
-      #    owner: layer5io
+      #    owner: meshery
       #    repository: meshery.io
       #    branch: master
       #    target_dir: charts
       #    commit_username: l5io
-      #    commit_email: l5io@layer5.io
+      #    commit_email: l5io@meshery.io
       #    chart_version: stable-latest
       - name: Publish Helm chart for release version
         if: github.event_name != 'pull_request' && startsWith(github.ref, 'refs/tags/') && success()
