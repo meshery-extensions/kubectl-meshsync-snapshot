@@ -44,11 +44,11 @@ spec:
         arch: amd64
     uri: https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/v0.0.4/kubectl-meshsync-snapshot_0.0.4_Windows_x86_64.zip
     sha256: 5e4b380d2f5ccde18b824f905f5480ba6c7eb4afe614001bddc0a591f44f5d32
-    bin: kubectl-meshsync-snapshot
+    bin: kubectl-meshsync-snapshot.exe
   - selector:
       matchLabels:
         os: windows
         arch: arm64
     uri: https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/v0.0.4/kubectl-meshsync-snapshot_0.0.4_Windows_i386.zip
     sha256: 678d1959c92fe87cc074b91ef949725c5f83db7d33d593d37c094db41df24928
-    bin: kubectl-meshsync-snapshot
+    bin: kubectl-meshsync-snapshot.exe
