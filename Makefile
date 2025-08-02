@@ -15,5 +15,11 @@
 build:
 	./scripts/build.sh
 
-install:
+uninstall:
+	./scripts/uninstall.sh || true
+
+install: uninstall
 	./scripts/install.sh
+
+install-local: uninstall
+	./scripts/install-local.sh
