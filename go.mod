@@ -2,11 +2,11 @@ module github.com/meshery-extensions/kubectl-meshsync-snapshot
 
 go 1.24.0
 
-// replace github.com/meshery/meshsync v0.8.22 => ../meshsync
+// replace github.com/meshery/meshsync v0.8.23 => ../meshsync
 
 require (
 	github.com/layer5io/meshkit v0.8.24
-	github.com/meshery/meshsync v0.8.22
+	github.com/meshery/meshsync v0.8.23
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.9.1
 )
