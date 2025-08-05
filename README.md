@@ -58,17 +58,43 @@ A self-service engineering platform, <a href="https://meshery.io">Meshery</a>, i
  <br />Try Meshery in the <a href="https://play.meshery.io">Cloud Native Playground</a> (<a href="https://youtu.be/Do7htKrRzDA">teaser video</a>)
 </div>
 
-## User Guide
+# kubectl meshsync snapshot
 
 A `kubectl` plugin for performing an ad hoc collection of resource information from a Kubernetes cluster and sending the cluster resources details to a Meshery Server. `kubectl meshsync snapshot` is a native kubectl plugin for conveniently synchronizing the state of your cluster with Meshery Server.
 
+## User Guide
 
-#### Prerequisites
-1) Ensure that both [kubectl](https://kubernetes.io/docs/tasks/tools/) and [krew]([url](https://krew.sigs.k8s.io/docs/user-guide/setup/install/)) are installed in your system.
+1) Ensure that both [kubectl](https://kubernetes.io/docs/tasks/tools/) and [krew]((https://krew.sigs.k8s.io/docs/user-guide/setup/install/) are installed in your system.
 2) Install the `meshsync snapshot` krew plugin.
 
 ```sh
 kubectl krew install meshsync https://github.com/meshery-extensions/kubectl-meshsync-snapshot
+```
+
+3) Follow any of these example usages
+
+**Sync all resources of any type for a single namespace**
+
+```sh
+kubectl meshsync-snapshot ....
+```
+
+**Sync resources of a single type for all namespaces**
+
+```sh
+kubectl meshsync-snapshot ....
+```
+
+**Example 3**
+
+```sh
+kubectl meshsync-snapshot ....
+```
+
+**Example 4**
+
+```sh
+kubectl meshsync-snapshot ....
 ```
 
 ## Contributor Guide
