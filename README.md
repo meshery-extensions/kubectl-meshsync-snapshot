@@ -60,7 +60,13 @@ A self-service engineering platform, <a href="https://meshery.io">Meshery</a>, i
 
 # kubectl meshsync snapshot
 
-A `kubectl` plugin for performing an ad hoc collection of resource information from a Kubernetes cluster and sending the cluster resources details to a Meshery Server. `kubectl meshsync snapshot` is a native kubectl plugin for conveniently synchronizing the state of your cluster with Meshery Server.
+### Description:
+`kubectl meshsync-snapshot` is a Krew plugin for capturing an ad hoc snapshot of resource information from a Kubernetes cluster. The collected data is output as a YAML file and can be uploaded to a Meshery server for visualisation.
+
+The plugin is based on the <a href="https://github.com/meshery/meshsync">MeshSync</a> — software that provides the Meshery server with detailed information about cluster resources.
+
+### Note:
+To install this plugin, you must first have Krew (the plugin manager for kubectl) installed. Follow the installation guide <a href="https://krew.sigs.k8s.io/docs/user-guide/setup/install/">here</a>.
 
 # Install from release
 ```sh
