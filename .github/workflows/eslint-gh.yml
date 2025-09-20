@@ -2,6 +2,7 @@ name: eslint-check
 on: [pull_request]
 jobs:
   eslint:
+    if: github.repository == 'meshery/meshery'
     name: runner / eslint
     runs-on: ubuntu-22.04
     steps:
