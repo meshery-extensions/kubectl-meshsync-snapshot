@@ -12,14 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-build:
-	./scripts/build.sh
+check-dependencies:
+	./scripts/main.sh check_dependencies
+
+build: check-dependencies
+	./scripts/main.sh build
 
 uninstall:
-	./scripts/uninstall.sh || true
+	./scripts/main.sh uninstall || true
 
-install: uninstall
-	./scripts/install.sh
+install: check-dependencies uninstall
+	./scripts/main.sh install
 
-install-local: uninstall
-	./scripts/install-local.sh
+install-local: check-dependencies uninstall
+	./scripts/main.sh install_local

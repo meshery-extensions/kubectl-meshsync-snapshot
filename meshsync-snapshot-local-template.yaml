@@ -15,26 +15,26 @@ spec:
         os: linux
         arch: amd64
     uri: not needed for local
-    sha256: <put your hash here>
+    sha256: <sha256 hash  placeholder, populated from make, DO NOT UPDATE>
     bin: bin/meshsync-snapshot
   - selector:
       matchLabels:
         os: linux
         arch: arm64
     uri: not needed for local
-    sha256: <put your hash here>
+    sha256: <sha256 hash  placeholder, populated from make, DO NOT UPDATE>
     bin: bin/meshsync-snapshot
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
     uri: not needed for local
-    sha256: <put your hash here>
+    sha256: <sha256 hash  placeholder, populated from make, DO NOT UPDATE>
     bin: bin/meshsync-snapshot
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
     uri: not needed for local
-    sha256: <put your hash here>
+    sha256: <sha256 hash  placeholder, populated from make, DO NOT UPDATE>
     bin: bin/meshsync-snapshot
