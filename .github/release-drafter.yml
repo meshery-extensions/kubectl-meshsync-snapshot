@@ -29,10 +29,10 @@ categories:
       - 'area/tests'
   - title: 📖 Documentation
     labels:
-      - rea/docs
+      - 'area/docs'
   - title: 🔒 Security
     labels:
-      - ecurity  
+      - 'security'  
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   ## What's New
