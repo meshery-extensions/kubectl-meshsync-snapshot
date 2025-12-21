@@ -1,6 +1,6 @@
 module github.com/meshery-extensions/kubectl-meshsync-snapshot
 
-go 1.24.0
+go 1.25.0
 
 // replace github.com/meshery/meshsync v0.8.23 => ../meshsync
 
