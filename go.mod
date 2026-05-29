@@ -5,7 +5,7 @@ go 1.25.5
 // replace github.com/meshery/meshsync v0.8.23 => ../meshsync
 
 require (
-	github.com/meshery/meshkit v0.8.59
+	github.com/meshery/meshkit v0.8.64
 	github.com/meshery/meshsync v0.8.25
 	github.com/sirupsen/logrus v1.9.4-0.20230606125235-dd1b4c2e81af
 	github.com/spf13/cobra v1.10.2
@@ -101,7 +101,7 @@ require (
 	github.com/mattn/go-runewidth v0.0.19 // indirect
 	github.com/mattn/go-sqlite3 v1.14.32 // indirect
 	github.com/meshery/meshery-operator v0.8.11 // indirect
-	github.com/meshery/schemas v0.8.94 // indirect
+	github.com/meshery/schemas v0.8.113 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
