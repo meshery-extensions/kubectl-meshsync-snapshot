@@ -18,7 +18,7 @@ require (
 	cuelang.org/go v0.15.1 // indirect
 	dario.cat/mergo v1.0.2 // indirect
 	github.com/Azure/go-ansiterm v0.0.0-20250102033503-faa5f7b0171c // indirect
-	github.com/BurntSushi/toml v1.5.0 // indirect
+	github.com/BurntSushi/toml v1.6.0 // indirect
 	github.com/MakeNowJust/heredoc v1.0.0 // indirect
 	github.com/Masterminds/goutils v1.1.1 // indirect
 	github.com/Masterminds/semver/v3 v3.4.0 // indirect
@@ -33,7 +33,7 @@ require (
 	github.com/clipperhouse/stringish v0.1.1 // indirect
 	github.com/clipperhouse/uax29/v2 v2.3.0 // indirect
 	github.com/cockroachdb/apd/v3 v3.2.1 // indirect
-	github.com/containerd/containerd v1.7.29 // indirect
+	github.com/containerd/containerd v1.7.30 // indirect
 	github.com/containerd/errdefs v1.0.0 // indirect
 	github.com/containerd/log v0.1.0 // indirect
 	github.com/containerd/platforms v1.0.0-rc.2 // indirect
@@ -68,7 +68,6 @@ require (
 	github.com/go-viper/mapstructure/v2 v2.4.0 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/gofrs/uuid v4.4.0+incompatible // indirect
-	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/google/btree v1.1.3 // indirect
 	github.com/google/gnostic-models v0.7.1 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
@@ -148,9 +147,9 @@ require (
 	golang.org/x/net v0.48.0 // indirect
 	golang.org/x/oauth2 v0.34.0 // indirect
 	golang.org/x/sync v0.19.0 // indirect
-	golang.org/x/sys v0.39.0 // indirect
-	golang.org/x/term v0.38.0 // indirect
-	golang.org/x/text v0.32.0 // indirect
+	golang.org/x/sys v0.40.0 // indirect
+	golang.org/x/term v0.39.0 // indirect
+	golang.org/x/text v0.33.0 // indirect
 	golang.org/x/time v0.14.0 // indirect
 	google.golang.org/api v0.257.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20251213004720-97cd9d5aeac2 // indirect
@@ -162,17 +161,17 @@ require (
 	gorm.io/driver/postgres v1.6.0 // indirect
 	gorm.io/driver/sqlite v1.6.0 // indirect
 	gorm.io/gorm v1.31.1 // indirect
-	helm.sh/helm/v3 v3.19.4 // indirect
-	k8s.io/api v0.34.3 // indirect
-	k8s.io/apiextensions-apiserver v0.34.3 // indirect
-	k8s.io/apimachinery v0.34.3 // indirect
-	k8s.io/apiserver v0.34.3 // indirect
-	k8s.io/cli-runtime v0.34.2 // indirect
-	k8s.io/client-go v0.34.3 // indirect
-	k8s.io/component-base v0.34.3 // indirect
+	helm.sh/helm/v3 v3.20.2 // indirect
+	k8s.io/api v0.35.1 // indirect
+	k8s.io/apiextensions-apiserver v0.35.1 // indirect
+	k8s.io/apimachinery v0.35.1 // indirect
+	k8s.io/apiserver v0.35.1 // indirect
+	k8s.io/cli-runtime v0.35.1 // indirect
+	k8s.io/client-go v0.35.1 // indirect
+	k8s.io/component-base v0.35.1 // indirect
 	k8s.io/klog/v2 v2.130.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20251125145642-4e65d59e963e // indirect
-	k8s.io/kubectl v0.34.2 // indirect
+	k8s.io/kubectl v0.35.1 // indirect
 	k8s.io/utils v0.0.0-20251002143259-bc988d571ff4 // indirect
 	oras.land/oras-go/v2 v2.6.0 // indirect
 	sigs.k8s.io/controller-runtime v0.22.4 // indirect
