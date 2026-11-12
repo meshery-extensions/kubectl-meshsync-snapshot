@@ -1,4 +1,4 @@
-apiVersion: krew.googlecontainertools.github.com/v1alpha2
+apiVersion: krew.cncf.io/v1alpha2
 kind: Plugin
 metadata:
   name: meshsync-snapshot
@@ -7,8 +7,17 @@ spec:
   homepage: https://github.com/meshery-extensions/kubectl-meshsync-snapshot
   shortDescription: Creates a k8s cluster snapshot using meshsync library
   description: |
-    Plugin creates cluster snapshot to upload to meshery server for visualisation
-  caveats:
+    Plugin creates cluster snapshots to export or upload to Meshery Server for offline visualization.
+  caveats: |
+    USAGE:
+      kubectl meshsync-snapshot [flags]
+
+    EXAMPLES:
+      # Capture cluster snapshot
+      kubectl meshsync-snapshot
+
+      # Capture specific namespace and upload to Meshery
+      kubectl meshsync-snapshot -n default --upload --meshery-url https://playground.meshery.io
   platforms:
   - selector:
       matchLabels:
