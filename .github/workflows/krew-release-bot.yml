@@ -1,0 +1,22 @@
+name: Release to Krew Index
+
+on:
+  release:
+    types: [published]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  krew-release-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Update Krew index manifest
+        uses: rajatjindal/krew-release-bot@v0.0.46
+        with:
+          krew_template_file: meshsync-snapshot.yaml

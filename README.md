@@ -76,31 +76,45 @@ To install this plugin, you must first have Krew (the plugin manager for kubectl
 kubectl krew install meshsync https://github.com/meshery-extensions/kubectl-meshsync-snapshot
 ```
 
-3) Follow any of these example usages
+3) Example usages:
 
-**Sync all resources of any type for a single namespace**
-
+**Capture all cluster resources into a timestamped file:**
 ```sh
-kubectl meshsync-snapshot ....
+kubectl meshsync-snapshot
 ```
 
-**Sync resources of a single type for all namespaces**
-
+**Capture resources within a specific namespace:**
 ```sh
-kubectl meshsync-snapshot ....
+kubectl meshsync-snapshot -n default -f default-namespace-snapshot.yaml
 ```
 
-**Example 3**
-
+**Capture selective resource types:**
 ```sh
-kubectl meshsync-snapshot ....
+kubectl meshsync-snapshot -r pod,deployment,service -n default
 ```
 
-**Example 4**
-
+**Capture for an extended duration (e.g. 15 seconds):**
 ```sh
-kubectl meshsync-snapshot ....
+kubectl meshsync-snapshot -d 15s
 ```
+
+**Capture cluster snapshot and automatically import into Meshery Server:**
+```sh
+kubectl meshsync-snapshot --upload --meshery-url https://playground.meshery.io --token <provider-token> --design-name my-cluster
+```
+
+### Available Flags
+
+| Flag | Shorthand | Description | Default |
+| --- | --- | --- | --- |
+| `--file` | `-f` | Output snapshot file name | `meshery-cluster-snapshot-YYYYMMDD-HHMMSS.yaml` |
+| `--duration` | `-d` | Duration of resource event collection | `8s` |
+| `--namespace` | `-n` | Restrict snapshot to one or more namespaces | all namespaces |
+| `--resources` | `-r` | Comma-separated list of resources to snapshot | all resources |
+| `--upload` | `-u` | Automatically import snapshot into Meshery Server | `false` |
+| `--meshery-url` | | Meshery Server API endpoint | `https://playground.meshery.io` |
+| `--token` | | Meshery provider authentication token | `""` |
+| `--design-name` | | Custom name for the imported design in Meshery | derived from filename |
 
 ## Contributor Guide
 
