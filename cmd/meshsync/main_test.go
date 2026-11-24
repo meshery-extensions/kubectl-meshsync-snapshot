@@ -80,3 +80,86 @@ func TestUploadSnapshotToMeshery(t *testing.T) {
 		t.Errorf("unexpected design id: got %s, want mock-cluster-design-id-1234", id)
 	}
 }
+
+func TestUploadSnapshotToMeshery_SingleObject(t *testing.T) {
+	mockServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		_ = json.NewEncoder(w).Encode(map[string]interface{}{
+			"id": "mock-single-id-5678",
+		})
+	}))
+	defer mockServer.Close()
+
+	tmpDir := t.TempDir()
+	snapshotFile := filepath.Join(tmpDir, "snapshot.yaml")
+	_ = os.WriteFile(snapshotFile, []byte("test: data"), 0644)
+
+	testLogger, _ := logger.New("test", logger.Options{Format: logger.SyslogLogFormat})
+	id, err := UploadSnapshotToMeshery(mockServer.URL, "mock-token", snapshotFile, "my-cluster", testLogger)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if id != "mock-single-id-5678" {
+		t.Errorf("expected mock-single-id-5678, got %s", id)
+	}
+}
+
+func TestUploadSnapshotToMeshery_MalformedResponse(t *testing.T) {
+	mockServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/html")
+		w.WriteHeader(http.StatusOK)
+		_, _ = w.Write([]byte("<html><body>Bad Gateway</body></html>"))
+	}))
+	defer mockServer.Close()
+
+	tmpDir := t.TempDir()
+	snapshotFile := filepath.Join(tmpDir, "snapshot.yaml")
+	_ = os.WriteFile(snapshotFile, []byte("test: data"), 0644)
+
+	testLogger, _ := logger.New("test", logger.Options{Format: logger.SyslogLogFormat})
+	_, err := UploadSnapshotToMeshery(mockServer.URL, "mock-token", snapshotFile, "my-cluster", testLogger)
+	if err == nil {
+		t.Fatalf("expected error for malformed response, got nil")
+	}
+}
+
+func TestUploadSnapshotToMeshery_ServerError(t *testing.T) {
+	mockServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusUnauthorized)
+		_, _ = w.Write([]byte(`{"error": "unauthorized"}`))
+	}))
+	defer mockServer.Close()
+
+	tmpDir := t.TempDir()
+	snapshotFile := filepath.Join(tmpDir, "snapshot.yaml")
+	_ = os.WriteFile(snapshotFile, []byte("test: data"), 0644)
+
+	testLogger, _ := logger.New("test", logger.Options{Format: logger.SyslogLogFormat})
+	_, err := UploadSnapshotToMeshery(mockServer.URL, "mock-token", snapshotFile, "my-cluster", testLogger)
+	if err == nil {
+		t.Fatalf("expected error for 401 response, got nil")
+	}
+}
+
+func TestUploadSnapshotToMeshery_ValidResponseWithoutID(t *testing.T) {
+	mockServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		_ = json.NewEncoder(w).Encode(map[string]interface{}{
+			"status": "ok",
+		})
+	}))
+	defer mockServer.Close()
+
+	tmpDir := t.TempDir()
+	snapshotFile := filepath.Join(tmpDir, "snapshot.yaml")
+	_ = os.WriteFile(snapshotFile, []byte("test: data"), 0644)
+
+	testLogger, _ := logger.New("test", logger.Options{Format: logger.SyslogLogFormat})
+	id, err := UploadSnapshotToMeshery(mockServer.URL, "mock-token", snapshotFile, "my-cluster", testLogger)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if id != "" {
+		t.Errorf("expected empty id, got %s", id)
+	}
+}

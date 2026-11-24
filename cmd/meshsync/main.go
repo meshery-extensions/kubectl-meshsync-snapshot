@@ -89,17 +89,23 @@ func UploadSnapshotToMeshery(apiURL, authToken, filePath, name string, log logge
 	}
 
 	var sliceResult []map[string]interface{}
-	if jsonErr := json.Unmarshal(body, &sliceResult); jsonErr == nil && len(sliceResult) > 0 {
+	sliceErr := json.Unmarshal(body, &sliceResult)
+	if sliceErr == nil && len(sliceResult) > 0 {
 		if id, ok := sliceResult[0]["id"].(string); ok && id != "" {
 			return id, nil
 		}
 	}
 
 	var mapResult map[string]interface{}
-	if jsonErr := json.Unmarshal(body, &mapResult); jsonErr == nil {
+	mapErr := json.Unmarshal(body, &mapResult)
+	if mapErr == nil {
 		if id, ok := mapResult["id"].(string); ok && id != "" {
 			return id, nil
 		}
+	}
+
+	if sliceErr != nil && mapErr != nil {
+		return "", errors.ErrDecodingAPI(sliceErr)
 	}
 
 	return "", nil
@@ -173,6 +179,8 @@ Examples:
 				designID, err := UploadSnapshotToMeshery(mesheryURL, token, outputFile, designName, log)
 				if err != nil {
 					log.Warnf("Warning: Could not upload snapshot to Meshery: %v", err)
+					log.Infof("Snapshot remains available locally at: %s", outputFile)
+					return err
 				} else if designID != "" {
 					log.Infof("✓ Snapshot imported into Meshery successfully! Design ID: %s", designID)
 					log.Infof("View in Meshery: %s/extension/meshmap?design=%s", mesheryURL, designID)

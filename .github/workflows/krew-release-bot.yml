@@ -19,4 +19,4 @@ jobs:
       - name: Update Krew index manifest
         uses: rajatjindal/krew-release-bot@v0.0.46
         with:
-          krew_template_file: meshsync-snapshot.yaml
+          krew_template_file: .krew.yaml
