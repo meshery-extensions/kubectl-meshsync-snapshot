@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: meshsync-snapshot
+spec:
+  version: {{ .TagName }}
+  homepage: https://github.com/meshery-extensions/kubectl-meshsync-snapshot
+  shortDescription: Creates a k8s cluster snapshot using meshsync library
+  description: |
+    Plugin creates cluster snapshots to export or upload to Meshery Server for offline visualization.
+  caveats: |
+    USAGE:
+      kubectl meshsync-snapshot [flags]
+
+    EXAMPLES:
+      # Capture cluster snapshot
+      kubectl meshsync-snapshot
+
+      # Capture specific namespace and upload to Meshery
+      kubectl meshsync-snapshot -n default --upload --meshery-url https://playground.meshery.io
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    {{addURIAndSha "https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/{{ .TagName }}/kubectl-meshsync-snapshot_{{ slice .TagName 1 }}_Linux_x86_64.tar.gz" .TagName }}
+    bin: kubectl-meshsync-snapshot
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    {{addURIAndSha "https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/{{ .TagName }}/kubectl-meshsync-snapshot_{{ slice .TagName 1 }}_Linux_arm64.tar.gz" .TagName }}
+    bin: kubectl-meshsync-snapshot
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    {{addURIAndSha "https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/{{ .TagName }}/kubectl-meshsync-snapshot_{{ slice .TagName 1 }}_Darwin_x86_64.tar.gz" .TagName }}
+    bin: kubectl-meshsync-snapshot
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    {{addURIAndSha "https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/{{ .TagName }}/kubectl-meshsync-snapshot_{{ slice .TagName 1 }}_Darwin_arm64.tar.gz" .TagName }}
+    bin: kubectl-meshsync-snapshot
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    {{addURIAndSha "https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/{{ .TagName }}/kubectl-meshsync-snapshot_{{ slice .TagName 1 }}_Windows_x86_64.zip" .TagName }}
+    bin: kubectl-meshsync-snapshot.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    {{addURIAndSha "https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/{{ .TagName }}/kubectl-meshsync-snapshot_{{ slice .TagName 1 }}_Windows_i386.zip" .TagName }}
+    bin: kubectl-meshsync-snapshot.exe
